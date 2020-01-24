@@ -1,7 +1,7 @@
 import React, {useState}from 'react';
 import './App.css';
-import StarWarsData from "./components/StarWarsData";
-// import StarWarsDataPg2 from "./components/StarWarsDataPg2";
+import {StarWarsData, StarWarsDataPg2, StarWarsDataPg3} from "./components/StarWarsData";
+
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -19,10 +19,19 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-     
+      <div>
+      <button >next</button>
+      <button >previous</button>
+      </div>
+      <div>
+      <button >1</button>
+      <button >2</button>
+      <button >3</button>
+      </div>
       
-      {/* <StarWarsDataPg2/> */}
       <StarWarsData />
+      <StarWarsDataPg2/>
+      <StarWarsDataPg3/>
     </div>
   );
 }
