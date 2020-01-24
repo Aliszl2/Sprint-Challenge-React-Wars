@@ -4,11 +4,14 @@ import StarWarsCard from "./StarWarsCard";
 
 function StarWarsData() {
   const [starWarsChars, setStarWarsChars] = useState([]);
+  const [previousPage, setpreviousPage] = useState();
+  const [nextPage, setNextPage] = useState();
   useEffect(() => {
     console.log("component mounted");
     axios
       .get("https://swapi.co/api/people/")
       .then(response => {
+        console.log(response.data);
         console.log(response.data.results);
         setStarWarsChars(response.data.results);
       })
@@ -19,14 +22,17 @@ function StarWarsData() {
   }, []);
   console.log(starWarsChars);
 
-  return starWarsChars.map(chars => {
-    return <StarWarsCard
-    name={chars.name}
-    height ={chars.height}
-    mass={chars.mass}
-    hair_color={chars.hair_color}
-    skin_color={chars.skin_color}
-    />;
-  });
+  return (
+      
+       starWarsChars.map(chars => {
+        return <StarWarsCard
+        name={chars.name}
+        height ={chars.height}
+        mass={chars.mass}
+        hair_color={chars.hair_color}
+        skin_color={chars.skin_color}
+        />;
+      })
+  );
 }
 export default StarWarsData;

@@ -4,6 +4,8 @@ import StarWarsCard from "./StarWarsCard";
 
 function StarWarsDataPg2() {
   const [starWarsChars, setStarWarsChars] = useState([]);
+  const [nextPage, setNextPage] = useState(null);
+  const [previousPage, setPreviousPage] = useState(null);
   useEffect(() => {
     console.log("component mounted");
     axios
@@ -21,7 +23,9 @@ function StarWarsDataPg2() {
 
 
   return starWarsChars.map(chars => {
+    
     return (
+     
       <StarWarsCard
         name={chars.name}
         height={chars.height}
@@ -29,6 +33,7 @@ function StarWarsDataPg2() {
         hair_color={chars.hair_color}
         skin_color={chars.skin_color}
       />
+     
     );
   });
 }
