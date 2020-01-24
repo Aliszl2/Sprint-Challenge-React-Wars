@@ -10,13 +10,16 @@ function StarWarsData() {
       .then(response => {
         console.log(response.data.results);
         setStarWarsChars(response.data.results);
-        console.log(starWarsChars);
       })
+
       .catch(error => {
         console.log("error:", error);
       });
   }, []);
   console.log(starWarsChars);
-  return "card";
+
+  return starWarsChars.map(chars => {
+    return "card";
+  });
 }
 export default StarWarsData;
