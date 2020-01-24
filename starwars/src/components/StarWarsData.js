@@ -20,7 +20,13 @@ function StarWarsData() {
   console.log(starWarsChars);
 
   return starWarsChars.map(chars => {
-    return <StarWarsCard/>;
+    return <StarWarsCard
+    name={chars.name}
+    height ={chars.height}
+    mass={chars.mass}
+    hair_color={chars.hair_color}
+    skin_color={chars.skin_color}
+    />;
   });
 }
 export default StarWarsData;
