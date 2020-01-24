@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import StarWarsCard from "./StarWarsCard";
 
 function StarWarsData() {
   const [starWarsChars, setStarWarsChars] = useState([]);
@@ -19,7 +20,7 @@ function StarWarsData() {
   console.log(starWarsChars);
 
   return starWarsChars.map(chars => {
-    return "card";
+    return <StarWarsCard/>;
   });
 }
 export default StarWarsData;
